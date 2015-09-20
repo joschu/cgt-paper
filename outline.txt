@@ -1,0 +1,23 @@
+Motivation
+- ML problems that require symbolic autodiff
+- existing libs + basic functionality
+
+Background: Symbolic Autodiff
+
+Background: Execution of CG
+
+CGT Pipeline
+- graph simplification: CSE, arithmetic simplifications, etc.
+- shape inference
+- memory model / in-place optimization
+- execution graph
+
+Empirical comparisons
+- VGG
+- MT + Attn
+- NTM
+- Speech
+- Deep Q-Learner
+
+
+
