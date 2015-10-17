@@ -1,0 +1,116 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{iclr2016_conference,times}
+\usepackage{hyperref}
+\usepackage{url}
+
+
+\title{Computation Graph Toolkit: Algorithms and Architecture}
+
+
+\author{
+Authors TBD
+% Antiquus S.~Hippocampus, Natalia Cerebro \& Amelie P. Amygdale \thanks{ Use footnote for providing further information
+% about author (webpage, alternative address)---\emph{not} for acknowledging
+% funding agencies.  Funding acknowledgements go at the end of the paper.} \\
+% Department of Computer Science\\
+% Cranberry-Lemon University\\
+% Pittsburgh, PA 15213, USA \\
+% \texttt{\{hippo,brain,jen\}@cs.cranberry-lemon.edu} \\
+% \And
+% Ji Q. Ren \& Yevgeny LeNet \\
+% Department of Computational Neuroscience \\
+% University of the Witwatersrand \\
+% Joburg, South Africa \\
+% \texttt{\{robot,net\}@wits.ac.za} \\
+% \AND
+% Coauthor \\
+% Affiliation \\
+% Address \\
+% \texttt{email}
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+%\iclrfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+
+
+\maketitle
+
+\begin{abstract}
+
+Efficient evaluation of mathematical functions and their derivatives is a primary need in scientific computing.
+Building on ideas from the recent software library called Theano, we develop a new library called the Computation Graph Toolkit (CGT).
+CGT provides automatic differentiation, and uses a fast compilation pipeline that enables parallel computation, 
+with concurrent usage of multiple CPUs and GPUs.
+This paper describes CGTs methodology for automatic differentiation, computation graph simplification, code generation, and numerical evaluation.
+We provide benchmarks that compare the performance of CGT with previous libraries such as Torch and Theano.
+
+\end{abstract}
+
+\section{Introduction}
+
+first part:
+(1) describe how symbolic autodiff is used in machine learning. 
+(2) describe existing libraries and their functionality.
+(3) describe their limitations
+
+second part:
+(4) how does cgt overcome their limitations
+(5) brief summary of architecture with emphasis on new parts
+(6) preview of comparisons
+
+\section{Symbolic Automatic Differentiation}
+
+(1) define computation graph
+(2) explain concept of pullback and how to differentiate a computation graph
+(3) also describe pushforward
+(4) compare cgt's SSA datastructure to Theano's factor graph / bipartite graph
+(5) compare CGT/Theano approach to Torch/Caffe approach with pros/cons
+
+\section{The Expression Graph}
+
+
+(1) describe the DAG and the different types of nodes in it
+(2) simplification and analysis
+(3) assigning memory locations and devices
+
+\section{The Execution Graph}
+
+(1) describe the data structure we're using
+(2) how the sequential and parallel interpreter works
+
+\section{Compilation Pipeline}
+
+describe the whole series of steps carried out when you call cgt.function
+
+\subsection{Code Generation}
+special discussion of how code gen works now (and how it differs from theano) and what are the advantages of code gen
+
+
+
+\section{Benchmarks}
+
+(1) runtime benchmarks on several models involving feedforward and recurrent nets. (SUGGESTIONS?)
+(2) compilation timing
+
+\subsubsection*{Acknowledgments}
+
+Use unnumbered third level headings for the acknowledgments. All
+acknowledgments, including those to funding agencies, go at the end of the paper.
+
+\bibliography{iclr2016_conference}
+\nocite{*}
+\bibliographystyle{iclr2016_conference}
+
+\end{document}
